@@ -1,0 +1,256 @@
+/* 
+collor palette tests 
+!1
+#B8D8D8
+#7A9E9F
+#556B6E
+#4F6367
+#364346 -> box shadow
+#9FACA1
+#EEF5DB
+#FE5F55
+#ec594e
+#d44f45
+!2
+#C33C54
+#254E70
+#274C77
+#37718E
+#9DD1F1
+#C8E0F4
+!3
+#A31621
+#FCF7F8
+#CED3DC
+#4E8098
+#90C2E7
+#1F3D60 -> box shadow
+#254E70
+#274C77
+*/
+*{
+  margin:0;
+  padding:0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  background-color:#CED3DC;
+}
+
+.nav{
+  display:flex;
+  justify-content: center;
+  height: 50px;
+  background-color:#254E70;
+  font-weight: bold;
+}
+
+.nav li{
+  float: left;
+  list-style: none;
+}
+
+.nav a{
+  color: #FCF7F8;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  margin: 5px 15px;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.nav a:hover{
+  border-radius: 50px;
+  background-color: #1F3D60;
+}
+
+.pagPrincipal{
+  height: 100%;
+  width: 100%;
+  position:absolute;
+  left:0;
+  top:0;
+  
+  text-align: center;
+  justify-content: center;
+  display:table;
+}
+
+.pagPrincipal a{
+  color: #EEF5DB;
+  margin:25px 35%;
+  border-radius: 8px;
+  background-color: #254E70;
+  box-shadow: 0 5px 10px 0 #1F3D60;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 2em;
+}
+
+.pagPrincipal a:hover {
+  /* border: 4px solid #364346; */
+  box-shadow: 0 15px 20px 5px #1F3D60;
+}
+
+.meio{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.container{
+  display:flex;
+  justify-content: center;
+}
+
+label{
+  color: #1F3D60;
+  font-weight: bold;
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 5px;
+}
+
+label:first-of-type{
+  margin-top: 5%;
+}
+
+.cadUser label:first-of-type{
+  margin-top: 30%;
+}
+
+label h4{
+  font-size: .8em;
+  color: #4f636798;
+}
+
+input{
+  padding: .5em;
+  width: 60em;
+}
+/* class="cadUser" no arquivo cadastroUser */
+input.cadUser{
+  width:25em;
+}
+
+input:focus, textarea:focus{
+  outline:none;
+  box-shadow: 0 5px 10px 3px #1F3D60;
+}
+
+input:hover,textarea:hover{
+  /* border: 3px solid #364346;
+  margin:-2px; */
+  box-shadow: 0 5px 10px 3px #1F3D60;
+}
+
+input::placeholder,textarea::placeholder{
+  color:#9cb4b4;
+}
+
+input,textarea{
+  background-color: #FCF7F8;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  box-shadow: 0 5px 10px 0 #1F3D60;
+  color:#1F3D60;
+}
+
+input[type="submit"]{
+  margin-top:10px;
+  color:#FCF7F8;
+  width: 100%;
+  padding: .5em 1em;
+  border-radius: 8px;
+  height:3em;
+  background-color: #254E70;
+  border: 1px solid transparent;
+  font-size: .9em;
+  box-shadow: 0 5px 10px 0 #1F3D60;
+  cursor:pointer;
+  font-weight: bold;
+}
+
+input[type="submit"]:hover{
+  /* border: 3px solid #4F6367; */
+  box-shadow: 0 5px 10px 3px #1F3D60;
+}
+
+#inputImagem{
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.fileInput +#labelFileInput{
+  color: #1F3D60;
+  background-color: #FCF7F8;
+  font-size: .9em;
+  font-weight: bold;
+  margin-top: 0;
+  cursor: pointer;
+  padding: 5px;
+  border: 1px solid transparent;
+  text-align: center;
+  border-radius: 25px;
+  box-shadow: 0 5px 10px 0 #1F3D60;
+}
+
+.fileInput:focus + #labelFileInput,
+.fileInput + #labelFileInput:hover {
+  /* border: 3px solid #364346; */
+  /* margin:-2px; */
+  box-shadow: 0 5px 10px 3px #1F3D60;
+}
+
+textarea{
+  min-height: 15em;
+  width: 60em;
+  padding: .5em;
+  border-radius: 8px;
+}
+
+/* ! Erros usar .fileInputError ou .inputError ou .cadUserInputError */
+.fileInputError +#labelFileInput{
+  color:#A31621;
+  font-size: .9em;
+  font-weight: bold;
+  margin-top: 0;
+  cursor: pointer;
+  padding: 5px;
+  border: 3px solid #C33C54;
+  text-align: center;
+  border-radius: 25px;
+  box-shadow: 0 5px 10px 0 #A31621;
+}
+
+.fileInputError:focus + #labelFileInput,
+.fileInputError + #labelFileInput:hover {
+  /* border: 3px solid #364346; */
+  /* margin:-2px; */
+  box-shadow: 0 5px 10px 3px #A31621;
+}
+
+input.inputError,input.cadUserInputError,textarea.inputError{
+  box-shadow: 0 5px 10px 0 #A31621;
+  border: 3px solid #C33C54;
+}
+
+input.cadUserInputError{
+  width:25em;
+}
+
+input:hover.inputError,input:hover.cadUserInputError,textarea:hover.inputError{
+  /* border: 3px solid #364346;
+  margin:-2px; */
+  box-shadow: 0 5px 10px 3px #A31621;
+}
+
+input.inputError::placeholder,input.cadUserInputError::placeholder,textarea.inputError::placeholder{
+  color:#A31621;
+}
