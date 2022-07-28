@@ -20,7 +20,6 @@
           <!-- class="fileInputError" para erros -->
           <!-- class="fileInput" padrao -->
           <input type="file" accept="image/*" name="inputImagem" id="inputImagem" class="fileInput">
-          <label for="imagem" id="labelFileInput">Escolha um arquivo</label>
           
           <label ></label>
           <input type="submit" id="enviar" name="enviar" value="Enviar">

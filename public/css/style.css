@@ -126,10 +126,6 @@ label h4{
   color: #4f636798;
 }
 
-input{
-  padding: .5em;
-  width: 60em;
-}
 /* class="cadUser" no arquivo cadastroUser */
 input.cadUser{
   width:25em;
@@ -141,8 +137,6 @@ input:focus, textarea:focus{
 }
 
 input:hover,textarea:hover{
-  /* border: 3px solid #364346;
-  margin:-2px; */
   box-shadow: 0 5px 10px 3px #1F3D60;
 }
 
@@ -151,6 +145,8 @@ input::placeholder,textarea::placeholder{
 }
 
 input,textarea{
+  padding: .5em;
+  width: 60em;
   background-color: #FCF7F8;
   border: 1px solid transparent;
   border-radius: 25px;
@@ -174,38 +170,16 @@ input[type="submit"]{
 }
 
 input[type="submit"]:hover{
-  /* border: 3px solid #4F6367; */
   box-shadow: 0 5px 10px 3px #1F3D60;
 }
 
-#inputImagem{
-  width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
-}
-
-.fileInput +#labelFileInput{
-  color: #1F3D60;
-  background-color: #FCF7F8;
+.fileInput{
   font-size: .9em;
+  width:99%;
   font-weight: bold;
   margin-top: 0;
   cursor: pointer;
   padding: 5px;
-  border: 1px solid transparent;
-  text-align: center;
-  border-radius: 25px;
-  box-shadow: 0 5px 10px 0 #1F3D60;
-}
-
-.fileInput:focus + #labelFileInput,
-.fileInput + #labelFileInput:hover {
-  /* border: 3px solid #364346; */
-  /* margin:-2px; */
-  box-shadow: 0 5px 10px 3px #1F3D60;
 }
 
 textarea{
@@ -216,7 +190,7 @@ textarea{
 }
 
 /* ! Erros usar .fileInputError ou .inputError ou .cadUserInputError */
-.fileInputError +#labelFileInput{
+.fileInputError{
   color:#A31621;
   font-size: .9em;
   font-weight: bold;
@@ -229,10 +203,8 @@ textarea{
   box-shadow: 0 5px 10px 0 #A31621;
 }
 
-.fileInputError:focus + #labelFileInput,
-.fileInputError + #labelFileInput:hover {
-  /* border: 3px solid #364346; */
-  /* margin:-2px; */
+.fileInputError:focus,
+.fileInputError:hover {
   box-shadow: 0 5px 10px 3px #A31621;
 }
 
