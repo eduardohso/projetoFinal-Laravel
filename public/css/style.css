@@ -66,38 +66,20 @@ body {
   background-color: #1F3D60;
 }
 
-.pagPrincipal{
-  height: 100%;
-  width: 100%;
-  position:absolute;
-  left:0;
-  top:0;
-  
-  text-align: center;
-  justify-content: center;
-  display:table;
-}
-
-.pagPrincipal a{
-  color: #FCF7F8;
-  margin:25px 35%;
-  border-radius: 8px;
-  background-color: #254E70;
-  box-shadow: 0 5px 10px 0 #1F3D60;
-  display: block;
+.msg{
   padding: 10px;
-  text-decoration: none;
-  font-size: 2em;
+  margin: 15px 150px;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 8px;
+  background-color:#254E70;
+  color: #FCF7F8;
+  text-align: center;
+  box-shadow: 0 5px 10px 0 #1F3D60;
 }
 
-.pagPrincipal a:hover {
-  /* border: 4px solid #364346; */
-  box-shadow: 0 15px 20px 5px #1F3D60;
-}
-
-.meio{
-  display: table-cell;
-  vertical-align: middle;
+.msg:hover{
+  display: none;
 }
 
 .container{

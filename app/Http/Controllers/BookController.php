@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Noticia;
+
 class BookController extends Controller
 {
     /**
@@ -13,7 +15,8 @@ class BookController extends Controller
      */
     public function index()
     {
-        return view(view:'index');
+        $noticias=Noticia::all();
+        return view('index',['noticias'=>$noticias]);
     }
 
     /**
@@ -24,6 +27,33 @@ class BookController extends Controller
     public function cadastroNoticia()
     {
         return view('noticias.cadastro');
+    }  
+    
+    public function salvarNoticia(Request $request)
+    {
+        $noticia = new Noticia;
+
+        $noticia->Titulo=$request->Titulo;
+        $noticia->Texto=$request->Texto;
+        $noticia->ID_Usuario=0;
+        $noticia->Fake=0;
+
+        // Image upload
+        if($request->hasFile('Imagem') && $request->file('Imagem')->isValid()){
+          $requestImagem = $request->Imagem;
+
+          $extension=$requestImagem->Extension();
+
+          $imageName=md5($requestImagem->getClientOriginalName().strtotime("now")).".".$extension;
+
+          $requestImagem->move(public_path('img/noticias'),$imageName);
+
+          $noticia->Imagem=$imageName;
+        }
+
+        $noticia->save();
+
+        return redirect('/')->with('msg','Notícia cadastrada com sucesso!');
     }    
     
     public function editarNoticia()
@@ -31,64 +61,10 @@ class BookController extends Controller
         return view('noticias.editar');
     }
     
-    public function exibirNoticia()
+    public function exibirNoticia($id)
     {
-        return view('noticias.exibir');
-    }
+        $noticia=Noticia::find($id);
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return view('noticias.exibir',['noticia'=>$noticia]);
     }
 }

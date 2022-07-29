@@ -11,7 +11,13 @@
   <script src="/js/script.js"></script>
 </head>
 <body>
-  @yield('content')
+  @yield('header')
+  <main>
+    @if(session('msg'))
+      <p class="msg">{{session('msg')}}</p>
+    @endif
+    @yield('content')
+  </main>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>

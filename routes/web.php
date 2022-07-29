@@ -18,9 +18,12 @@ Route::get('/',[BookController::class,'index']);
 
 Route::get('/noticias/cadastro',[BookController::class,'cadastroNoticia']);
 
+Route::get('/noticias/{id}',[BookController::class,'exibirNoticia']);
+
+Route::post('/noticias',[BookController::class,'salvarNoticia']);
+
 Route::get('/noticias/editar',[BookController::class,'editarNoticia']);
 
-Route::get('/noticias/exibir',[BookController::class,'exibirNoticia']);
 
 
 
