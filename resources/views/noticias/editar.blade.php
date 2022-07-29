@@ -1,7 +1,6 @@
 @extends('templates.template')
-
+@section('title','Editar Notícia')
 @section('content')
-  <title>Editar Notícia</title>
   <div class="nav">
     <ul>
       <li><a href="/">Home</a></li>

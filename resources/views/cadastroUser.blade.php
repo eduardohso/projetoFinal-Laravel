@@ -1,7 +1,8 @@
 @extends('templates.template')
 
+@section('title','Cadastrar Usuário')
+
 @section('content')
-  <title>Cadastrar Usuário</title>
   <div class="nav">
     <ul>
       <li><a href="/">Home</a></li>

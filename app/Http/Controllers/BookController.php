@@ -21,9 +21,19 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function cadastroNoticia()
     {
-        //
+        return view('noticias.cadastro');
+    }    
+    
+    public function editarNoticia()
+    {
+        return view('noticias.editar');
+    }
+    
+    public function exibirNoticia()
+    {
+        return view('noticias.exibir');
     }
 
     /**

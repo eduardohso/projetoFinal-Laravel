@@ -12,24 +12,24 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\BookController;
 
-// Route::get('/', 'App\Http\Controllers\BookController@index');
-Route::get('/', function(){
-  return view('index');
-});
+Route::get('/',[BookController::class,'index']);
 
-Route::get('/cadastroUser', function(){
-  return view('cadastroUser');
-});
+Route::get('/noticias/cadastro',[BookController::class,'cadastroNoticia']);
 
-Route::get('/editarUser', function(){
-  return view('editarUser');
-});
+Route::get('/noticias/editar',[BookController::class,'editarNoticia']);
 
-Route::get('/cadastroNoticia', function(){
-  return view('cadastroNoticia');
-});
+Route::get('/noticias/exibir',[BookController::class,'exibirNoticia']);
 
-Route::get('/editarNoticia', function(){
-  return view('editarNoticia');
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });

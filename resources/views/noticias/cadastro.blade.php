@@ -1,7 +1,6 @@
 @extends('templates.template')
-
+@section('title','Cadastrar Notícia')
 @section('content')
-  <title>Cadastrar Notícia</title>
   <div class="nav">
     <ul>
       <li><a href="/">Home</a></li>
@@ -11,7 +10,7 @@
       <form method="POST" enctype="multipart/form-data">
           <label for="titulo">Título:</label>
           <!-- class="inputError" para erros -->
-          <input type="text" class="inputError" id="inputTitulo" name="inputTitulo" placeholder="Título da notícia">
+          <input type="text" class="" id="inputTitulo" name="inputTitulo" placeholder="Título da notícia">
 
           <label for="noticia">Texto:</label>
           <textarea id="inputNoticia" name="inputNoticia" placeholder="Texto da notícia"></textarea>
