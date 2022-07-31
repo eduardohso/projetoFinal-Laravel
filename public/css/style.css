@@ -145,6 +145,7 @@ input[type="submit"]{
   box-shadow: 0 5px 10px 0 #1F3D60;
   cursor:pointer;
   font-weight: bold;
+  margin-bottom: 25px;
 }
 
 input[type="submit"]:hover{
@@ -304,5 +305,17 @@ input.inputError::placeholder,input.cadUserInputError::placeholder,textarea.inpu
   background-color:#254E70;
   color: #FCF7F8;
   text-align: center;
+  box-shadow: 0 5px 10px 0 #1F3D60;
+}
+
+.imagemPreview{
+  display:block;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  width: 500px;
+  object-fit:cover;
+  border-radius: 10px;
   box-shadow: 0 5px 10px 0 #1F3D60;
 }
