@@ -78,10 +78,6 @@ body {
   box-shadow: 0 5px 10px 0 #1F3D60;
 }
 
-.msg:hover{
-  display: none;
-}
-
 .container{
   display:flex;
   justify-content: center;
@@ -296,5 +292,17 @@ input.inputError::placeholder,input.cadUserInputError::placeholder,textarea.inpu
   max-height: 500px;
   object-fit:cover;
   border-radius: 10px;
+  box-shadow: 0 5px 10px 0 #1F3D60;
+}
+
+.semNoticias{
+  padding: 10px;
+  margin: 15px 150px;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 8px;
+  background-color:#254E70;
+  color: #FCF7F8;
+  text-align: center;
   box-shadow: 0 5px 10px 0 #1F3D60;
 }

@@ -19,7 +19,7 @@
 				<h1>{{$noticia->Titulo}}</h1>
 				<br>
         <p>{{$noticia->Texto}}</p>
-        <h3>{{$noticia->ID_Usuario}}</h3>
+        <h3>{{$autorNoticia['name']}}</h3>
 		</div>
 @endsection
 @endsection
