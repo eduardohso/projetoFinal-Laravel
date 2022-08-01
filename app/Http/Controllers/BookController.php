@@ -103,4 +103,10 @@ class BookController extends Controller
 
         return redirect('/')->with('msg','Notícia editada com sucesso!');
     }
+
+    public function listarNoticiasFake() {
+        $noticias =Noticia::where('Fake','>',0);
+        dd($noticias);
+        return view('noticias.listar-fake',['noticias'=>$noticias]);
+    }
 }

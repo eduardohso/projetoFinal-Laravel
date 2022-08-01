@@ -28,6 +28,8 @@ Route::get('/noticias/editar/{id}',[BookController::class,'editarNoticia'])->mid
 
 Route::put('/noticias/update/{id}',[BookController::class,'updateNoticia'])->middleware('auth');
 
+Route::get('/listar-fake',[BookController::class,'listarNoticiasFake'])->middleware('auth');
+
 Route::get('/listar-usuarios',[UsersController::class,'listarUsuarios'])->middleware('auth');
 
 
