@@ -27,7 +27,7 @@
 @section('content')
 
 	<div class='noticiaCompleta'>
-		<img class='banner' src='/img/noticias/{{$noticia->Imagem}}' alt="{{$noticia->Titulo}}"/>
+		<img src='/img/noticias/{{$noticia->Imagem}}' alt="{{$noticia->Titulo}}"/>
 		<div class="texto">
 				<h1>{{$noticia->Titulo}}</h1>
 				<br>
@@ -35,7 +35,11 @@
         <h3>{{$autorNoticia['name']}}</h3>
 		</div>
 		<div class="stats">
-			
+			<ul class="container">
+				<li><button type="button">Like</button></li>
+				<li><button type="button">Deslike</button></li>
+				<li><button type="button">Fake</button></li>
+			</ul>
 		</div>
 @endsection
 @endsection
