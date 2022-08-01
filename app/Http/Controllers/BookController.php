@@ -101,6 +101,6 @@ class BookController extends Controller
 
         Noticia::find($request->id)->update($data);
 
-        return redirect('/index')->with('msg','Notícia editada com sucesso!');
+        return redirect('/')->with('msg','Notícia editada com sucesso!');
     }
 }
