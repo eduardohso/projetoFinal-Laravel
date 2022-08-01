@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\UsersController;
+
 
 Route::get('/',[BookController::class,'index'])->middleware('auth');
 
@@ -24,7 +26,7 @@ Route::post('/noticias',[BookController::class,'salvarNoticia'])->middleware('au
 
 Route::get('/noticias/editar',[BookController::class,'editarNoticia'])->middleware('auth');
 
-
+Route::get('/listar-usuarios',[UsersController::class,'listarUsuarios'])->middleware('auth');
 
 
 Route::middleware([
