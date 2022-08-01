@@ -64,8 +64,7 @@ class BookController extends Controller
         }
         
     }    
-    
-    
+
     public function exibirNoticia($id)
     {
         $noticia=Noticia::find($id);
@@ -107,5 +106,20 @@ class BookController extends Controller
     public function listarNoticiasFake() {
         $noticias =Noticia::where('Fake','>',0);
         return view('noticias.listar-fake',['noticias'=>$noticias]);
+    }
+
+    public function like($id){
+        $autorNoticia=User::find($id);
+        $autorNoticia=$autorNoticia->pontos+1;
+    }
+
+    public function deslike($id){
+        $autorNoticia=User::find($id);
+        $autorNoticia=$autorNoticia->pontos-2;
+    }
+
+    public function fake($id){
+        $autorNoticia=User::find($id);
+        $autorNoticia=$autorNoticia->pontos-4;
     }
 }

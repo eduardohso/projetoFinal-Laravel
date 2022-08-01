@@ -32,6 +32,12 @@ Route::get('/listar-fake',[BookController::class,'listarNoticiasFake'])->middlew
 
 Route::get('/listar-usuarios',[UsersController::class,'listarUsuarios'])->middleware('auth');
 
+Route::put('/noticias/like/{id}',[UsersController::class,'like'])->middleware('auth');
+
+Route::put('/noticias/deslike/{id}',[UsersController::class,'deslike'])->middleware('auth');
+
+Route::put('/noticias/fake/{id}',[UsersController::class,'fake'])->middleware('auth');
+
 
 Route::middleware([
     'auth:sanctum',
