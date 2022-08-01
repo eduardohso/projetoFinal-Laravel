@@ -106,7 +106,6 @@ class BookController extends Controller
 
     public function listarNoticiasFake() {
         $noticias =Noticia::where('Fake','>',0);
-        dd($noticias);
         return view('noticias.listar-fake',['noticias'=>$noticias]);
     }
 }
