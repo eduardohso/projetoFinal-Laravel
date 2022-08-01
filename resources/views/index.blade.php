@@ -34,8 +34,8 @@
 			<a href="/noticias/{{$noticia->ID}}">
 				{{$noticia->Titulo}}
 				<br><p class="noticia">{{$noticia->Texto}}</p>
-        <h3>{{$noticia->ID_Usuario}}</h3>
 			</a>
+			.
 		</div>
 	</div>
 </div>

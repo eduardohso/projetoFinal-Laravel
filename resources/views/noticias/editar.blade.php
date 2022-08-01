@@ -26,15 +26,15 @@
 
 @section('content')
   <div class="container">
-    <form method="/noticias/update/{{$noticia->id}}" enctype="multipart/form-data">
+    <form action="/noticias/update/{{$noticia->ID}}" method="POST" enctype="multipart/form-data">
       @csrf
       @method("PUT")
       <label for="titulo">Título:</label>
       <!-- class="inputError" para erros -->
-      <input type="text" id="inputTitulo" name="inputTitulo" placeholder="Título da notícia" value="{{$noticia->Titulo}}">
+      <input type="text" id="inputTitulo" name="Titulo" placeholder="Título da notícia" value="{{$noticia->Titulo}}">
 
       <label for="noticia">Texto:</label>
-      <textarea id="inputNoticia" name="inputNoticia" placeholder="Texto da notícia" >{{$noticia->Texto}}</textarea>
+      <textarea id="inputNoticia" name="Texto" placeholder="Texto da notícia" >{{$noticia->Texto}}</textarea>
           
       <label for="imagem">Imagem:<br><h4>Apenas uma imagem por notícia</h4></label>
       <!-- class="fileInputError" para erros -->
@@ -44,7 +44,7 @@
       <img  src="/img/noticias/{{$noticia->Imagem}}" alt="{{$noticia->Titulo}}" class="imagemPreview" >
 
       <label ></label>
-      <input type="submit" id="enviar" name="enviar" value="Enviar">
+      <input type="submit"  value="Enviar">
     </form>
   </div>
 </div>
