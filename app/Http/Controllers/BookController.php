@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Noticia;
 
+use App\Models\User;
+
 class BookController extends Controller
 {
     /**
@@ -16,6 +18,7 @@ class BookController extends Controller
     public function index()
     {
         $noticias=Noticia::all();
+        
         return view('index',['noticias'=>$noticias]);
     }
 
@@ -35,7 +38,7 @@ class BookController extends Controller
 
         $noticia->Titulo=$request->Titulo;
         $noticia->Texto=$request->Texto;
-        $noticia->ID_Usuario=0;
+
         $noticia->Fake=0;
 
         // Image upload
@@ -50,21 +53,51 @@ class BookController extends Controller
 
           $noticia->Imagem=$imageName;
         }
+        
+        $user=auth()->user();
+        $noticia->ID_Usuario=$user->id;
 
         $noticia->save();
 
         return redirect('/')->with('msg','Notícia cadastrada com sucesso!');
     }    
     
-    public function editarNoticia()
-    {
-        return view('noticias.editar');
-    }
     
     public function exibirNoticia($id)
     {
         $noticia=Noticia::find($id);
 
-        return view('noticias.exibir',['noticia'=>$noticia]);
+        $autorNoticia=User::where('id',$noticia->ID_Usuario)->first()->toArray();
+        
+        return view('noticias.exibir',['noticia'=>$noticia,'autorNoticia'=>$autorNoticia]);
+    }
+    
+    public function editarNoticia($id)
+    {
+        $noticia=Noticia::find($id);
+
+        return view('noticias.editar',['noticia'=>$noticia]);
+    }
+
+    public function updateNoticia(Request $request){
+
+        $data = $request->all();
+
+        // Image upload
+        if($request->hasFile('Imagem') && $request->file('Imagem')->isValid()){
+            $requestImagem = $request->Imagem;
+  
+            $extension=$requestImagem->Extension();
+  
+            $imageName=md5($requestImagem->getClientOriginalName().strtotime("now")).".".$extension;
+  
+            $requestImagem->move(public_path('img/noticias'),$imageName);
+  
+            $data['Imagem']=$imageName;
+          }
+
+        Noticia::find($request->id)->update($data);
+
+        return redirect('/index')->with('msg','Notícia editada com sucesso!');
     }
 }

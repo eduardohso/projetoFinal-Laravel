@@ -1,11 +1,12 @@
 @extends('templates.template')
 @section('title','Cadastrar Notícia')
+@section('header')
+<div class="nav">
+  <ul>
+    <li><a href="/">Home</a></li>
+  </ul>
+</div>
 @section('content')
-  <div class="nav">
-    <ul>
-      <li><a href="/">Home</a></li>
-   </ul>
-  </div>
   <div class="container">
       <form method="POST" enctype="multipart/form-data" action="/noticias">
         @csrf
@@ -26,4 +27,5 @@
       </form>
     </div>
   </div>
+@endsection
 @endsection

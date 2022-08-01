@@ -14,15 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\BookController;
 
-Route::get('/',[BookController::class,'index'])->middleware('auth');
+Route::get('/',[BookController::class,'index']);
 
 Route::get('/noticias/cadastro',[BookController::class,'cadastroNoticia'])->middleware('auth');
 
-Route::get('/noticias/{id}',[BookController::class,'exibirNoticia'])->middleware('auth');
+Route::get('/noticias/{id}',[BookController::class,'exibirNoticia']);
 
 Route::post('/noticias',[BookController::class,'salvarNoticia'])->middleware('auth');
 
-Route::get('/noticias/editar',[BookController::class,'editarNoticia'])->middleware('auth');
+Route::get('/noticias/editar/{id}',[BookController::class,'editarNoticia'])->middleware('auth');
+
+Route::put('/noticias/update/{id}',[BookController::class,'updateNoticia'])->middleware('auth');
 
 
 
