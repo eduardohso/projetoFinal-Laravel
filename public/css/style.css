@@ -322,9 +322,9 @@ input.inputError::placeholder,input.cadUserInputError::placeholder,textarea.inpu
 
 .stats{
   background-color:#CED3DC;
-  box-shadow: 0 5px 10px 0 #1F3D60;
+  box-shadow: 0 5px 10px 10px #1F3D60;
   height: 50px;
-  border-radius: 8px;
+  border-radius: 50px;
 }
 .stats li{
   text-align: center;
@@ -342,7 +342,8 @@ input.inputError::placeholder,input.cadUserInputError::placeholder,textarea.inpu
   text-decoration: none;
   font-size: 1em;
   border: 1px solid transparent;
-  border-radius: 8px;
+  border-radius: 50px;
+  width:100px;
   box-shadow: 0 5px 10px 0 #1F3D60;
 }
 
