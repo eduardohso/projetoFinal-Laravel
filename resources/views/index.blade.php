@@ -35,7 +35,6 @@
 				{{$noticia->Titulo}}
 				<br><p class="noticia">{{$noticia->Texto}}</p>
 			</a>
-			.
 		</div>
 	</div>
 </div>

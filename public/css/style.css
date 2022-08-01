@@ -319,3 +319,10 @@ input.inputError::placeholder,input.cadUserInputError::placeholder,textarea.inpu
   border-radius: 10px;
   box-shadow: 0 5px 10px 0 #1F3D60;
 }
+
+.stats{
+  background-color:#CED3DC;
+  box-shadow: 0 5px 10px 0 #1F3D60;
+  height: 50px;
+  border-radius: 8px;
+}

@@ -34,5 +34,8 @@
         <p>{{$noticia->Texto}}</p>
         <h3>{{$autorNoticia['name']}}</h3>
 		</div>
+		<div class="stats">
+			
+		</div>
 @endsection
 @endsection
