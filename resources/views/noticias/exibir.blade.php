@@ -7,7 +7,7 @@
   <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/noticias/cadastro">Cadastrar notícia</a></li>
-    <li><a href="/noticias/editar/{{$noticia->id}}">Editar notícia</a></li>
+    <li><a href="/noticias/editar/{{$noticia->ID}}">Editar notícia</a></li>
     @auth
 		<li>
 			<form action="/logout" method="POST">

@@ -20,9 +20,11 @@ Route::get('/noticias/cadastro',[BookController::class,'cadastroNoticia'])->midd
 
 Route::get('/noticias/{id}',[BookController::class,'exibirNoticia']);
 
-Route::post('/noticias',[BookController::class,'salvarNoticia']);
+Route::post('/noticias',[BookController::class,'salvarNoticia'])->middleware('auth');
 
 Route::get('/noticias/editar/{id}',[BookController::class,'editarNoticia'])->middleware('auth');
+
+Route::put('/noticias/update/{id}',[BookController::class,'updateNoticia'])->middleware('auth');
 
 
 

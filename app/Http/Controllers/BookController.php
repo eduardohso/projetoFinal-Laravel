@@ -62,24 +62,42 @@ class BookController extends Controller
         return redirect('/')->with('msg','Notícia cadastrada com sucesso!');
     }    
     
-    public function editarNoticia($id)
-    {
-        $noticia=Noticia::find($id);
-
-        return view('noticias.editar',['noticia'=>$noticia]);
-    }
     
     public function exibirNoticia($id)
     {
         $noticia=Noticia::find($id);
 
         $autorNoticia=User::where('id',$noticia->ID_Usuario)->first()->toArray();
-
+        
         return view('noticias.exibir',['noticia'=>$noticia,'autorNoticia'=>$autorNoticia]);
     }
+    
+    public function editarNoticia($id)
+    {
+        $noticia=Noticia::find($id);
 
-    // public function cadastrarUsuario()
-    // {
-    //     return view('usuarios.cadastroUser');
-    // }
+        return view('noticias.editar',['noticia'=>$noticia]);
+    }
+
+    public function updateNoticia(Request $request){
+
+        $data = $request->all();
+
+        // Image upload
+        if($request->hasFile('Imagem') && $request->file('Imagem')->isValid()){
+            $requestImagem = $request->Imagem;
+  
+            $extension=$requestImagem->Extension();
+  
+            $imageName=md5($requestImagem->getClientOriginalName().strtotime("now")).".".$extension;
+  
+            $requestImagem->move(public_path('img/noticias'),$imageName);
+  
+            $data['Imagem']=$imageName;
+          }
+
+        Noticia::find($request->id)->update($data);
+
+        return redirect('/index')->with('msg','Notícia editada com sucesso!');
+    }
 }
